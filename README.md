@@ -1,66 +1,72 @@
-## Foundry
+# foundry-project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A simple demo project built with Foundry for learning Solidity smart contract development.
 
-Foundry consists of:
+## Getting Started
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### Install Foundry
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
 ```
 
-### Test
+## Commands
 
-```shell
-$ forge test
+
+1. **Create a New Foundry Project**
+
+```bash
+forge init foundary-project
+```
+Creates a new Foundry project with the default project structure.
+
+2. **Build Contracts**
+```bash
+  forge build
+```
+Compiles all smart contracts inside the `src/` directory.
+
+3. **Run Tests**
+
+```bash
+forge test
+```
+Runs all Solidity tests inside the `test/` directory.
+
+4. **Format Code**
+
+```bash
+forge fmt
+```
+Formats Solidity files using Foundry's formatter.
+
+5. **Deploy Contracts**
+
+```bash
+forge script script/Deploy.s.sol --rpc-url <RPC_URL> --private-key <PRIVATE_KEY> --broadcast
+
+# Locally using anvil
+  forge script script/Deploy.s.sol --fork-url <RPC_URL> --private-key <PRIVATE_KEY> --broadcast
 ```
 
-### Format
+Deploys contracts to the configured blockchain network.
 
-```shell
-$ forge fmt
+6. **Clean Build Files**
+
+```bash
+forge clean
 ```
 
-### Gas Snapshots
+Removes build artifacts and cache files.
 
-```shell
-$ forge snapshot
+7. **Install Dependencies**
+
+```bash
+forge install
 ```
+Installs dependencies defined in the project.
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## Resources
+- [Foundry Docs](https://www.getfoundry.sh/introduction/getting-started)
+- [Solidity Examples](https://solidity-by-example.org/app) 
